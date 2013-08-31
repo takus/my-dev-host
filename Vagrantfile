@@ -15,9 +15,9 @@ Vagrant.configure("2") do |config|
     config.omnibus.chef_version = "11.4.0"
 
     c.vm.provision :chef_solo do |chef|
-      chef.cookbooks_path = [ 'chef-repo/cookbooks', 'chef-repo/site-cookbooks', 'chef-repo/vendor/cookbooks' ]
-      chef.roles_path     = [ 'chef-repo/roles' ]
-      chef.data_bags_path = [ 'chef-repo/data_bags' ]
+      chef.cookbooks_path = [ 'cookbooks', 'site-cookbooks', 'vendor/cookbooks' ]
+      chef.roles_path     = [ 'roles' ]
+      chef.data_bags_path = [ 'data_bags' ]
       chef.add_recipe 'yum::epel'
       chef.add_recipe 'git::source'
       chef.add_recipe 'vim'
